@@ -41,10 +41,11 @@ public class Cetak {
         }
     }
 
+
     public static void printModusMedianMean(){
         double mean = (double) SeleksiData.totalNilai / SeleksiData.jumlahData;
         String modus = Modus.cekModus();
-        double median = Median.cekMedian();
+        double median = Median.cekMedian(Data.nilaiTerurut);
         try {
             FileWriter fileWriter = new FileWriter("C:\\temp\\direktori\\MeanMedianModus.txt");
 
