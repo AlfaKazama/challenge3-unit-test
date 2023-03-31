@@ -10,41 +10,47 @@ public class MedianTest {
     @DisplayName("Mengecek jika jumlah datanya genap")
     @Test
     public void cekMedianTestGenap() {
-        int[] data = {
+        int[] Kumpulandata = {
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
         };
+
+        int data = Kumpulandata.length;
         double median;
-        if((data.length % 2) == 1) {
-            int a = data.length / 2;
-            median = data[a];
+        if((data % 2) == 1) {
+            int a = data / 2;
+            median = Double.valueOf(Kumpulandata[a]);
         } else {
-            int a = data.length / 2;
-            int b = (data.length / 2) - 1;
-            int c = (a + b) / 2;
-            median = data[c];
+            int a = data / 2;
+            int b = (data / 2) - 1;
+            int c = Kumpulandata[a] + Kumpulandata[b];
+            median = c / 2.0;
         }
-        var result = 5;
-        assertEquals(5, result);
+
+        var result = median;
+        assertEquals(5.5, result);
     }
 
     @DisplayName("Mengecek jika jumlah datanya ganjil")
     @Test
     public void cekMedianTestGanjil() {
-        int[] data = {
+        int[] Kumpulandata = {
                 1, 2, 3, 4, 5, 6, 7
         };
-        double median;
-        if((data.length % 2) == 1) {
-            int a = data.length / 2;
-            median = data[a];
-        } else {
-            int a = data.length / 2;
-            int b = (data.length / 2) - 1;
-            int c = (a + b) / 2;
-            median = data[c];
-        }
-        var result = 4;
-        assertEquals(4, result);
 
+        int data = Kumpulandata.length;
+        double median;
+        if((data % 2) == 1) {
+            int a = data / 2;
+            median = Double.valueOf(Kumpulandata[a]);
+        } else {
+            int a = data / 2;
+            int b = (data / 2) - 1;
+            int c = Kumpulandata[a] + Kumpulandata[b];
+            median = c / 2.0;
+        }
+
+        var result = median;
+        assertEquals(4, result);
     }
+
 }
